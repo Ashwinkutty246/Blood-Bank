@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr"
+  xmlns:fb="http://ogp.me/ns/fb#"
+  xmlns:og="http://ogp.me/ns#">
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="MobileOptimized" content="width" />
+  <!--[if IE]><![endif]-->
+<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+<link rel="preconnect" href="//fonts.gstatic.com" crossorigin="" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+<link rel="preconnect" href="//fonts.googleapis.com" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="This is the implementation of a Blood Bank management system based on Drupal 7 CMS. It was developed for the needs on an Research Program in collaboration with a Greek Hospital and the Midwifery Department of TEI." />
+<meta name="generator" content="Drupal 7 (https://www.drupal.org)" />
+<link rel="image_src" href="https://www.drupal.org/files/project-images/92.jpg" />
+<link rel="canonical" href="https://www.drupal.org/sandbox/dnacreative/2682617" />
+<link rel="shortlink" href="https://www.drupal.org/node/2682617" />
+<meta property="og:site_name" content="Drupal.org" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.drupal.org/sandbox/dnacreative/2682617" />
+<meta property="og:title" content="BloodBank Distro" />
+<meta property="og:description" content="This is the implementation of a Blood Bank management system based on Drupal 7 CMS. It was developed for the needs on an Research Program in collaboration with a Greek Hospital and the Midwifery Department of TEI." />
+<meta property="og:updated_time" content="2018-03-09T18:48:14+00:00" />
+<meta property="article:published_time" content="2016-03-07T14:10:20+00:00" />
+<meta property="article:modified_time" content="2018-03-09T18:48:14+00:00" />
+  <title>BloodBank Distro | Drupal.org</title>
+  <link type="text/css" rel="stylesheet" href="/files/advagg_css/css__jb6WvfQP17GX7XUNzdV0DvlcsHgC2lOReUrKCQiQ44g__Z9Q0-mSzLYCUMXpQ-Q3EAfmElozYeusqCqaTpMtAOI8__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all" />
+<link type="text/css" rel="stylesheet" href="/files/advagg_css/css__eFKSCujfWyJYO8J-qSi6T_n29lROS8isvrxzANeHaAY__D_EUHDAfEQdxcLiSDY7hREUWkG1Ge56_h2z3Er8V188__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all" />
+<link type="text/css" rel="stylesheet" href="/files/advagg_css/css__WF0PRotZAhCcl0aJjY5W2LYj8UwiYuB2dZEFluOh3Tc__FviX13FUB-Ppa2XB29BUIJQZ1Wg-F5XiDE7XD5y7mjQ__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all" />
+<link type="text/css" rel="stylesheet" href="/files/advagg_css/css__oQGQfQQIWi-LcJC6vkFZVnv3p_o6ltSSrXQCapWoCz4__RGE_JBatOGfZBhGnTFb10FAjwRCH9xr4MJxqyb9o96Y__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all" />
+<link type="text/css" rel="stylesheet" href="/files/advagg_css/css__QPp1snPjYt_xYr0c_V0IORcEElkIUBBBrvOB4ZE0Gnw__7U4_Wkp2KWNhY1VJbV1DzbdUC-aKBPUgQehsDDjJ8tY__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.css" media="all" />
+  </head>
+<body class="html not-front not-logged-in two-sidebars page-node page-node- page-node-2682617 node-type-project-distribution drupalorg-site-main" >
+  <div id="skip-link" tabindex="-1">
+    <a class="element-invisible element-focusable" href="#content">Skip to main content</a>
+    <a class="element-invisible element-focusable skip-link-search" href="#search-block-form">Skip to search</a>
+  </div>
+    <div class="region region-page-top">
+    <noscript aria-hidden="true"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W36H8DW" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div id="drupalorg-crosssite-gdpr">Can we use first and third party cookies and web beacons to <a href="https://www.drupal.org/terms">understand our audience, and to tailor promotions you see</a>?<br><button class="yes">Yes, please</button><button class="no">No, do not track me</button></div>  </div>
+      <div id="nav-header">
+          <div class="menu-nav">
+        <a class="nav-btn" id="nav-open-btn" href="#block-system-main-menu"><img src="/sites/all/themes/bluecheese/images/icon-w-menu.svg" alt="Main menu"></a>
+      </div>
+        <nav id="navigation-inner" class="container-12" role="navigation">
+        <div class="region region-navigation">
+    <div id="block-system-main-menu" class="block block-system block-menu">
+<div class="block-inner">
+    
+  <div class="content">
+    <div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="/home" title="Drupal.org home page">Drupal.org home</a></li>
+<li class="expanded"><a href="/about" title="">Why Drupal?</a><div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="/developers" title="">For developers</a></li>
+<li class="leaf"><a href="/marketers" title="Why marketers should choose Drupal for their ambitious digital experiences">For marketers</a></li>
+<li class="leaf"><a href="/agencies" title="Learn why agencies are betting their future on Drupal">For agencies</a></li>
+<li class="leaf"><a href="/case-studies" title="View case studies to see how your peers have built success on Drupal">Case studies</a></li>
+<li class="leaf"><a href="/about" title="Learn about Drupal">About Drupal</a></li>
+<li class="leaf"><a href="/about/9" title="Prepare for Drupal 9">Drupal 9</a></li>
+<li class="leaf"><a href="/about/10" title="">Drupal 10</a></li>
+<li class="last leaf"><a href="/about/in-the-news" title="">In the news</a></li>
+</ul></div></li>
+<li class="expanded"><a href="/download" title="Build your solution on Drupal">Build</a><div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="/download" title="Download and Extend Drupal">Download &amp; Extend</a></li>
+<li class="leaf"><a href="https://git.drupalcode.org/project/drupal" title="">Browse Repository</a></li>
+<li class="leaf"><a href="/documentation" title="">Documentation</a></li>
+<li class="leaf"><a href="/project/modules" title="Find modules to extend Drupal to meet any need">Modules</a></li>
+<li class="leaf"><a href="/project/themes" title="Browse themes as a starting point for making your Drupal site your own">Themes</a></li>
+<li class="leaf"><a href="/project/distributions" title="Use a distribution to start with a version of Drupal customized to purpose">Distributions</a></li>
+<li class="leaf"><a href="/project/project_general" title="General projects might include javascript libraries, development tools, or other non-module/non-theme Drupal components.">General</a></li>
+<li class="leaf"><a href="/project/issues" title="Dive into the issues queues and contribute back to Drupal">Issue queues</a></li>
+<li class="last leaf"><a href="/about/core/strategic-initiatives" title="">Strategic Initiatives</a></li>
+</ul></div></li>
+<li class="expanded"><a href="/industries" title="Examples of solutions built on Drupal">Solutions</a><div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="/industries" title="Learn why Drupal is the best solution for your industry">By industry</a></li>
+<li class="leaf"><a href="/features" title="">By feature</a></li>
+<li class="leaf"><a href="/case-studies" title="View Drupal success stories">Case studies</a></li>
+<li class="last leaf"><a href="/hosting" title="Find a solution for hosting your Drupal application">For hosting</a></li>
+</ul></div></li>
+<li class="expanded"><a href="/drupal-services" title="Buy Drupal Products and Services">Services</a><div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="/drupal-services" title="View the Drupal service provider marketplace">Marketplace</a></li>
+<li class="leaf"><a href="/hosting" title="Find trusted Drupal hosting providers">Hosting</a></li>
+<li class="last leaf"><a href="/training" title="Find expert Drupal training">Training</a></li>
+</ul></div></li>
+<li class="expanded"><a href="/community" title="Drupal Community">Community</a><div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="/community" title="View the community portal and find all the ways you can contribute to Drupal">Portal</a></li>
+<li class="leaf"><a href="/community/contributor-guide" title="">Contributor guide</a></li>
+<li class="leaf"><a href="/organizations" title="Learn about the organizations that are part of the Drupal ecosystem">Organizations</a></li>
+<li class="leaf"><a href="/forum" title="Find support or chat with the community on the forum">Forum</a></li>
+<li class="leaf"><a href="/community/agency-marketing/promotedrupal" title="">Promote Drupal</a></li>
+<li class="leaf"><a href="/case-studies/community" title="">Community Case Studies</a></li>
+<li class="leaf"><a href="https://www.drupal.org/swag?utm_source=drupalorg&amp;utm_medium=banner&amp;utm_campaign=drupal_swag_shop_2020_09_17" title="Purchase Drupal merchandise and be the coolest kid on the block">Drupal Swag</a></li>
+<li class="last leaf"><a href="/about/core" title="">Core Development &amp; Strategic Initiatives</a></li>
+</ul></div></li>
+<li class="expanded"><a href="/documentation" title="Resources to help you on your Drupal journey">Resources</a><div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="/docs/user_guide/en/index.html" title="The Drupal 8 user guide will get you up to speed in no time">User guide</a></li>
+<li class="leaf"><a href="/documentation" title="Drupal Documentation">Documentation</a></li>
+<li class="leaf"><a href="/support" title="Support for using Drupal">Support</a></li>
+<li class="leaf"><a href="/security" title="Find information about security releases for Drupal">Security</a></li>
+<li class="leaf"><a href="/association/become-a-drupal-certified-partner" title="">Become a Certified Partner</a></li>
+<li class="leaf"><a href="/association/find-a-drupal-certified-partner" title="">Find a Certified Partner</a></li>
+<li class="leaf"><a href="https://jobs.drupal.org/" title="Drupal Jobs">Jobs</a></li>
+<li class="leaf"><a href="https://events.drupal.org" title="Learn about official Drupal Association events">Events</a></li>
+<li class="leaf"><a href="/subscribe" title="">Newsletter</a></li>
+<li class="leaf"><a href="/news" title="News about the Drupal ecosystem">Project News</a></li>
+<li class="leaf"><a href="/about/9" title="Prepare for Drupal 9">Drupal 9</a></li>
+<li class="last leaf"><a href="/drupalorg/docs/diversity-equity-and-inclusion-resources" title="">Diversity, Equity, and Inclusion Resources</a></li>
+</ul></div></li>
+<li class="expanded"><a href="/association" title="About the Drupal Association - the non-profit that supports the Drupal project">Give</a><div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="/association" title="Learn about the Drupal Association - the nonprofit that supports the Drupal project">Drupal Association</a></li>
+<li class="leaf"><a href="/association/supporters" title="Learn more about the organizations that support the Drupal Association and our mission">Supporters</a></li>
+<li class="leaf"><a href="/promotedrupal" title="">Promote Drupal</a></li>
+<li class="leaf"><a href="/association/support" title="We depend on you to move the Drupal project forward">Join us</a></li>
+<li class="leaf"><a href="/community/contributor-guide" title="">Contributor guide</a></li>
+<li class="leaf"><a href="/drupalorg" title="">About Drupal.org</a></li>
+<li class="last leaf"><a href="/association/discover-drupal" title="">Discover Drupal</a></li>
+</ul></div></li>
+<li class="expanded"><a href="/community/events" title="Find Drupal Events around the world, from the official DrupalCons, to community Camps and Meet-Ups">Events</a><div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="http://events.drupal.org/pittsburgh2023" title="">DrupalCon Pittsburgh</a></li>
+<li class="leaf"><a href="https://events.drupal.org/lille2023" title="DrupalCon Europe | 17-20 October 2023">DrupalCon Lille</a></li>
+<li class="last leaf"><a href="/community/events" title="">Community Events</a></li>
+</ul></div></li>
+<li class="last expanded"><a href="/try-drupal" title="Try Drupal">Try Drupal</a><div class="menu-block"><ul class="menu button"><li class="first leaf"><a href="/try-drupal" title="Demo Drupal online with a Drupal platform partner">Demo online</a></li>
+<li class="last leaf"><a href="/download" title="">Download</a></li>
+</ul></div></li>
+</ul></div><a class="close-btn" href="#top">Return to content</a>  </div>
+  </div>
+</div>
+<div id="block-search-form" class="block block-search">
+<div class="block-inner">
+    
+  <div class="content">
+    <form action="/sandbox/dnacreative/2682617" method="post" id="search-block-form" accept-charset="UTF-8"><div><div class="container-inline">
+      <h2 class="element-invisible">Search form</h2>
+    <div class="form-item form-type-textfield form-item-search-block-form">
+  <label class="element-invisible" for="edit-search-block-form--2">Search </label>
+ <input placeholder="Search…" type="text" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" class="form-text" />
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input alt="Search" type="image" id="edit-submit" name="submit" value="Search" src="/sites/all/themes/bluecheese/images/icon-w-search.svg" class="form-submit" /></div><input type="hidden" name="form_build_id" value="form-t7s54VEl1R5QVNP4ON5RxoGkkgmWwI3DF225UtIPCjI" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>  </div>
+  </div>
+</div>
+<div id="block-system-user-menu" class="block block-system block-menu">
+<div class="block-inner">
+    
+  <div class="content">
+    <div class="menu-block"><ul class="menu"><li class="button default"><a href="#block-system-user-menu"><img src="https://www.drupal.org/sites/all/themes/bluecheese/images/icon-w-user.svg" alt="Log in, view profile, and more"></a><ul><li class="first leaf"><a href="/user/login?destination=node/2682617" title="">Log in</a></li>
+<li class="last leaf"><a href="/user/register?destination=node/2682617" title="">Create account</a></li>
+</ul></li></ul></div>  </div>
+  </div>
+</div>
+  </div>
+    </nav>
+  </div>
+
+    <div id="header" class="clearfix">
+    <div id="header-inner" class="container-12 clearfix">
+      <div id="header-left">
+        <div id="site-name"><a href="/" title="Drupal"><img src="https://www.drupal.org/files/drupal-wordmark.svg" alt="Drupal" /></a></div>
+              </div>
+      <div id="header-right">
+              </div>
+    </div>
+  </div>
+  
+      <div id="banner" data-nosnippet>
+        <div class="region region-banner">
+    <div id="block-drupalorg-announcements" class="block block-drupalorg">
+<div class="block-inner">
+    
+  <div class="content">
+    <div class="announcement"><img class="photo" src="https://www.drupal.org/files/styles/grid-2-2x-square/public/announcements/da-hexagon-icon-280X280px.png?itok=gjWFFXGX" width="280" height="280" alt="Announcement icon" title="Announcement icon" />It’s Membership May and we are close to reaching our quarterly membership goal! By becoming a member today, you make an impact on future DrupalCons & other aspects of the Drupal community.</div>
+<div class="cta"><a href="https://www.drupal.org/association/individual-membership" class="global-announce-banner dc-pittsburgh-hotel-cta">Get your Drupal Association membership today</a></div>  </div>
+  </div>
+</div>
+  </div>
+    </div>
+  
+  <div id="page" class="clearfix">
+    <div id="page-heading">
+                    <div id="page-title-tools" class="container-12 clearfix" role="navigation">
+
+          <div class="page-title-wrapper">
+                                          <div id="page-title" class="h2">Download &amp; Extend</div>
+                                    </div>
+
+                  </div> <!-- /#page-title-tools -->
+
+                  <div id="nav-content" class="container-12">
+            <ul class="links"><li class="core first"><a href="/project/drupal">Drupal Core</a></li>
+<li class="distributions active"><a href="/project/project_distribution" class="active">Distributions</a></li>
+<li class="modules"><a href="/project/project_module">Modules</a></li>
+<li class="themes"><a href="/project/project_theme">Themes</a></li>
+<li class="components last"><a href="/project/project_general">General projects</a></li>
+</ul>          </div> <!-- /#nav-content -->
+        
+        <div class="breadbox"></div>
+
+                            <h1 id="page-subtitle" class="container-12"><a href="/project/user/2290702">dnacreative&#039;s sandbox</a>: BloodBank Distro</h1>
+                  
+      
+    </div> <!-- /#page-heading -->
+
+          <div id="tabs" class="clearfix container-12">
+        <h2 class="element-invisible">Primary tabs</h2><ul class="tabs primary clearfix"><li class="active"><a href="/sandbox/dnacreative/2682617" class="active">View<span class="element-invisible">(active tab)</span></a></li>
+<li><a href="/project/2682617/git-instructions">Version control</a></li>
+</ul>      </div> <!-- /#tabs -->
+    
+    <div class="container-12 page-inner">              <div id="sidebar-first" role="complementary" >
+          <div id="sidebar-first-region">
+              <div class="region region-sidebar-first">
+    <div id="block-drupalorg-project-follow" class="block block-drupalorg">
+<div class="block-inner">
+    
+  <div class="content">
+    <span><a href="/user?destination=node/2682617" class="log-in-to-star" title="Log in to star projects">3<span class="element-invisible"> people starred this project</span></a></span>  </div>
+  </div>
+</div>
+  </div>
+          </div> <!-- /#column-right-region-first -->
+        </div> <!-- /#column-right-first -->
+      
+      <div id="main" role="main">
+        
+        <div id="content" class="clearfix">
+                                        <div id="content-inner" class="clearfix">  <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+<div class="block-inner">
+    
+  <div class="content">
+    <div id="node-2682617" class="node node-project-distribution node-content-2682617 clearfix">
+
+  
+      
+  
+  <div class="content">
+    <div class="field field-name-field-project-images field-type-image field-label-hidden"><div class="field-items"><div class="field-item even"><a href="https://www.drupal.org/files/project-images/92.jpg"><img src="https://www.drupal.org/files/styles/grid-3-2x/public/project-images/92.jpg?itok=zx3qasEh" width="440" height="293" alt="" /></a></div></div></div><div class="note-warning"><h4>Experimental project</h4><p>This is a <a href="/node/1011196">sandbox project</a>, which contains experimental code for developer use only.</p></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items"><div class="field-item even"><p>This is the implementation of a Blood Bank management system based on Drupal 7 CMS. It was developed for the needs on an Research Program in collaboration with a Greek Hospital and the Midwifery Department of TEI.</p></div></div></div><div class="field field-name-field-supporting-organizations field-type-field-collection field-label-above"><div class="field-label">Supporting organizations:&nbsp;</div><div class="field-items"><div class="field-item even"><div class="entity entity-field-collection-item field-collection-item-field-supporting-organizations clearfix">
+  <div class="content">
+    <div class="field field-name-field-supporting-organization field-type-entityreference field-label-hidden"><div class="field-items"><div class="field-item even"><a href="/dna-creative-group-ltd">DNA Creative Group LTD</a></div></div></div>  </div>
+</div>
+</div></div></div><h3>Project information</h3><ul class="project-info"><li>Created by <a href="/u/dnacreative">dnacreative</a> on <time pubdate datetime="1457359820">7 March 2016</time>, updated <time pubdate datetime="1520621294">9 March 2018</time></li></ul>  </div>
+
+  <div class="node-footer"></div>
+
+</div>
+
+  </div>
+  </div>
+</div>
+  </div>
+</div>
+                            </div> <!-- /#content -->
+
+      </div> <!-- /#column-left -->
+
+              <div id="aside" role="complementary" >
+          <div id="aside-region">
+              <div class="region region-sidebar-second">
+    <div id="block-drupalorg-project-maintainers" class="block block-drupalorg">
+<div class="block-inner">
+    <h2>Maintainers</h2>
+  
+  <div class="content">
+    <div class="maintainers"><div class="maintainer">  <div class="user-picture">
+    <a href="/u/dnacreative" title="View user profile."><img src="https://www.drupal.org/files/styles/grid-2-2x-square/public/user-pictures/picture-2290702-1461053366.png?itok=XF8p9tKk" width="280" height="280" alt="dnacreative&#039;s picture" title="dnacreative&#039;s picture" /></a>  </div>
+<small><a href="/u/dnacreative">dnacreative</a></small></div></div>  </div>
+  </div>
+</div>
+<div id="block-project-issue-issue-cockpit" class="block block-project-issue">
+<div class="block-inner">
+    <h2>Issues for BloodBank Distro</h2>
+  
+  <div class="content">
+    To avoid duplicates, please search before submitting a new issue.
+  <form action="/project/issues/2682617" method="get" id="project-issue-issue-cockpit-searchbox" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-text">
+  <label class="element-invisible" for="edit-text">Search </label>
+ <input type="text" id="edit-text" name="text" value="" size="20" maxlength="128" class="form-text" />
+</div>
+<input type="hidden" name="status" value="All" />
+<input type="submit" id="edit-submit--2" value="Search" class="form-submit" /><a href="/project/issues/search/2682617">Advanced search</a></div></form>  <div class="issue-cockpit-categories">
+          <div class="issue-cockpit-All">
+        <h3>All issues</h3>
+        <div class="issue-cockpit-totals">
+          <a href="/project/issues/2682617?categories=All">0 open</a>,
+                                          <a href="/project/issues/2682617?status=All&amp;categories=All">0 total</a>        </div>
+      </div>
+          <div class="issue-cockpit-1">
+        <h3>Bug report</h3>
+        <div class="issue-cockpit-totals">
+          <a href="/project/issues/2682617?categories=1">0 open</a>,
+                                          <a href="/project/issues/2682617?status=All&amp;categories=1">0 total</a>        </div>
+      </div>
+      </div>
+
+  <div class="issue-cockpit-subscribe">
+      </div>
+
+      <div class="issue-cockpit-metrics">
+      <h3>Statistics</h3>
+      <div class="metric-container"><span class="metric-label">New issues</span><div class="view view-project-issue-metrics-new-issues view-id-project_issue_metrics_new_issues view-display-id-default project-issue-sparkline view-dom-id-42ae520dc889474711275e582f2542d5">
+        
+  
+  
+      <div class="view-content">
+      <div  id="view-d3-vis-42ae520dc889474711275e582f2542d5" class="d3 sparkline"></div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div></div><div class="metric-container"><span class="metric-label">Open bugs</span><div class="view view-project-issue-metrics-open-bugs view-id-project_issue_metrics_open_bugs view-display-id-default project-issue-sparkline view-dom-id-7707cb1e04d309408ab9ba9def8917d5">
+        
+  
+  
+      <div class="view-content">
+      <div  id="view-d3-vis-7707cb1e04d309408ab9ba9def8917d5" class="d3 sparkline"></div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div></div><div class="metric-container"><span class="metric-label">Participants</span><div class="view view-project-issue-metrics-participants view-id-project_issue_metrics_participants view-display-id-default project-issue-sparkline view-dom-id-2b400362f2906386cc50a84bc351e81b">
+        
+  
+  
+      <div class="view-content">
+      <div  id="view-d3-vis-2b400362f2906386cc50a84bc351e81b" class="d3 sparkline"></div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div></div>      <div><small>2 year graph, updates weekly</small></div>
+    </div>
+    </div>
+  </div>
+</div>
+<div id="block-drupalorg-project-resources" class="block block-drupalorg-project">
+<div class="block-inner">
+    <h2>Resources</h2>
+  
+  <div class="content">
+    <ul class="links"><li class="0 first last"><a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html">Read license</a></li>
+</ul>  </div>
+  </div>
+</div>
+<div id="block-drupalorg-project-development" class="block block-drupalorg-project">
+<div class="block-inner">
+    <h2>Development</h2>
+  
+  <div class="content">
+    <ul class="links"><li class="0 first"><a href="https://git.drupalcode.org/sandbox/dnacreative-2682617">Source code</a></li>
+<li class="1"><a href="https://git.drupalcode.org/sandbox/dnacreative-2682617/-/commits">Commit log</a></li>
+<li class="2"><a href="https://git.drupalcode.org/sandbox/dnacreative-2682617/activity">GitLab activity</a></li>
+<li class="3"><a href="/project/2682617/report-security-issue">Report a security vulnerability</a></li>
+<li class="4 last"><a href="/list-changes/2682617">View change records</a></li>
+</ul>  </div>
+  </div>
+</div>
+  </div>
+          </div> <!-- /#column-right-region -->
+        </div> <!-- /#column-right -->
+      
+          </div>  </div> <!-- /#page -->
+
+  <div id="footer" role="contentinfo">
+            <div class="region region-footer">
+    <div id="block-drupalorg-crosssite-contrib-partners" class="block block-drupalorg-crosssite">
+<div class="block-inner">
+    
+  <div class="content">
+    <h2>
+  Thank you to these Drupal contributors
+</h2>
+
+<p>Top Drupal contributor <a class="hc" href="https://acquia.com">Acquia</a> would like to thank their partners for their contributions to Drupal.</p> 
+<div class="contrib-partners">
+  <div class="contrib-partner">
+     <a href="https://www.thirdandgrove.com/"><img alt="Third and Grove" src="/files/styles/grid-3/public/thirdandgrove.png" width="100%"/></a>
+  </div>
+      <div class="contrib-partner">
+     <a href="https://www.mediacurrent.com/"><img alt="MediaCurrent" src="/files/cta/graphic/MC_Badge_Blue.png" width="85%"/></a>
+  </div>
+     <div class="contrib-partner">
+     <a href="https://www.qed42.com/"><img alt="QED42" src="/files/styles/grid-3/public/logo-new.png" width="75%"/></a>
+  </div>
+    <div class="contrib-partner">
+     <a href="https://www.acromedia.com/"><img alt ="Acro Media" src="/files/styles/grid-3/public/Acro-Media-Drupal.png" width="90%"/></a>
+  </div>
+    <div class="contrib-partner">
+     <a href="https://www.srijan.net/"><img alt="Srijan" src="https://www.drupal.org/files/styles/grid-3/public/Neo%20Srijan%20Noir.png" width="95%"/></a>
+  </div>
+     <div class="contrib-partner">
+     <a href="https://www.iodigital.com/"><img alt="IO" src="/files/styles/grid-4-2x/public/iO-logo%2Bblack.png" width="80%"/></a>
+  </div>
+     <div class="contrib-partner">
+     <a href="https://us.ciandt.com/"><img alt="CI&T" src="/files/styles/grid-3/public/CI%26T%20Logo%20-%20PANTONE.png" width="90%"/></a>
+  </div>
+     <div class="contrib-partner">
+     <a href="https://www.lullabot.com/"><img alt="Lullabot" src="/files/styles/grid-3/public/Lullabot_Logo_Vertical-svg.png" width="68%"/></a>
+  </div>
+     <div class="contrib-partner">
+     <a href="https://kanopi.com/"><img alt="Kanopi Studios" src="/files/styles/grid-3/public/KanopiStudios_Logo_Horiz_PMS.png" width="100%"/></a>
+  </div>
+    <div class="contrib-partner">
+     <a href="https://www.zyxware.com/"><img alt="Zyxware Technologies" src="/files/styles/grid-3/public/Zyxware_logo.png?itok=zWde6J5e" width="105%"/></a>
+  </div>
+</div>  </div>
+  </div>
+</div>
+<div id="block-drupalorg-crosssite-infra-partner" class="block block-drupalorg-crosssite">
+<div class="block-inner">
+    
+  <div class="content">
+    <a href="https://tag1consulting.com" >Infrastructure management for Drupal.org provided by <img src="/files/cta/graphic/tag1_wht.svg" alt="Tag1 logo" ></a>  </div>
+  </div>
+</div>
+<div id="block-drupalorg-crosssite-drupalorg-footer" class="block block-drupalorg-crosssite">
+<div class="block-inner">
+    
+  <div class="content">
+    <h4 class="element-invisible">News items</h4><ul class="drupal-news"><li class="0 first"><a href="https://www.drupal.org/news">News</a></li>
+<li class="1"><a href="https://www.drupal.org/planet" title="News from Drupal community members">Planet Drupal</a></li>
+<li class="2"><a href="https://www.drupal.org/about/media-kit/social-media" title="Drupal on social media">Social media</a></li>
+<li class="3"><a href="https://www.drupal.org/subscribe">Sign up for Drupal news</a></li>
+<li class="4"><a href="https://www.drupal.org/security" title="Announcements from the Drupal Security Team">Security advisories</a></li>
+<li class="5 last"><a href="https://jobs.drupal.org/" title="Drupal Jobs">Jobs</a></li>
+</ul><h4 class="element-invisible">Our community</h4><ul class="community"><li class="0 first"><a href="https://www.drupal.org/community">Community</a></li>
+<li class="1"><span><a href="https://www.drupal.org/drupal-services" title="People and organizations offering Drupal services">Services</a>, <a href="https://www.drupal.org/training" title="People and organizations offering Drupal training">Training</a> & <a href="https://www.drupal.org/hosting" title="Organizations offering Drupal hosting">Hosting</a></span></li>
+<li class="2"><a href="https://www.drupal.org/community/contributor-guide">Contributor guide</a></li>
+<li class="3"><a href="https://groups.drupal.org/groups" title="groups.drupal.org">Groups &amp; meetups</a></li>
+<li class="4"><a href="https://events.drupal.org" title="Upcoming and past DrupalCons">DrupalCon</a></li>
+<li class="5 last"><a href="https://www.drupal.org/dcoc" title="Drupal code of conduct">Code of conduct</a></li>
+</ul><h4 class="element-invisible">Documentation</h4><ul class="get-started"><li class="0 first"><a href="https://www.drupal.org/documentation" title="Documentation for working with Drupal">Documentation</a></li>
+<li class="1"><a href="https://www.drupal.org/docs">Drupal Guide</a></li>
+<li class="2"><a href="https://www.drupal.org/docs/user_guide/en/index.html">Drupal User Guide</a></li>
+<li class="3"><a href="https://www.drupal.org/documentation/develop">Developer docs</a></li>
+<li class="4 last"><a href="https://api.drupal.org/" title="Drupal API reference">API.Drupal.org</a></li>
+</ul><h4 class="element-invisible">Drupal code base</h4><ul class="download-extend"><li class="0 first"><a href="https://www.drupal.org/download">Download &amp; Extend</a></li>
+<li class="1"><a href="https://www.drupal.org/project/drupal" title="Download the latest version of the Drupal software">Drupal core</a></li>
+<li class="2"><a href="https://www.drupal.org/project/project_module" title="Download add-on features and functionality">Modules</a></li>
+<li class="3"><a href="https://www.drupal.org/project/project_theme" title="Download pre-designed styles for Drupal">Themes</a></li>
+<li class="4 last"><a href="https://www.drupal.org/project/project_distribution" title="Download a pre-packaged Drupal site">Distributions</a></li>
+</ul><h4 class="element-invisible">Governance of community</h4><ul class="about"><li class="0 first"><a href="https://www.drupal.org/about">About</a></li>
+<li class="1"><a href="https://www.drupal.org/about/features/accessibility" title="Our committment to accessibility">Web accessibility</a></li>
+<li class="2"><a href="https://www.drupal.org/association" title="About the Drupal Association">Drupal Association</a></li>
+<li class="3"><a href="https://www.drupal.org/drupalorg" title="About Drupal.org">About Drupal.org</a></li>
+<li class="4"><a href="https://www.drupal.org/terms" title="Drupal.org terms of service">Terms of service</a></li>
+<li class="5 last"><a href="https://www.drupal.org/privacy" title="Drupal.org privacy policy">Privacy policy</a></li>
+</ul>  </div>
+  </div>
+</div>
+<div id="block-block-77" class="block block-block">
+<div class="block-inner">
+    
+  <div class="content">
+    <p>Drupal is a <a href="/about/trademark">registered trademark</a> of <a href="https://dri.es">Dries Buytaert</a>.</p>
+  </div>
+  </div>
+</div>
+  </div>
+      </div>
+    <div class="region region-page-bottom">
+    <script type="text/javascript">
+      (function(){
+          window._pxAppId = 'PXVnPBBfwe';
+          window._pxParam2 = '';
+          window._pxParam3 = '0';
+          var p = document.getElementsByTagName('script')[0],
+              s = document.createElement('script');
+          s.async = 1;
+          s.src = '/VnPBBfwe/init.js';
+          p.parentNode.insertBefore(s,p);
+      }());
+  </script>
+  <noscript>
+      <div style="position:fixed; top:0; left:0; display:none" width="1" height="1">
+          <img src="/VnPBBfwe/xhr/api/v1/collector/noScript.gif?appId=PXVnPBBfwe">
+      </div>
+  </noscript>  </div>
+<script type="text/javascript" src="/files/advagg_js/js__B0FBwiP97ZnD38IFraZus4upS4KVkMXI3ou0fJ2ZXGA__pPDESRJz9GHsxqQIwQ_V8xnFYEH5jipG2eicsfrdWCs__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer"></script>
+
+<!--[if lte IE 9]>
+<script type="text/javascript" src="/files/advagg_js/js__79M6UrZjAw3oNGnUjsWip12JsvnUZmJGA3h9LI0kuzE__J0sbXAJNry2-C_ZL2xd0RdVuzwTLvwN-UisIv5RNCvU__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js#ie9-" onload="if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(true);}"></script>
+<![endif]-->
+
+<!--[if gt IE 9]>
+<script type="text/javascript" src="/files/advagg_js/js__79M6UrZjAw3oNGnUjsWip12JsvnUZmJGA3h9LI0kuzE__J0sbXAJNry2-C_ZL2xd0RdVuzwTLvwN-UisIv5RNCvU__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js#ie10+" defer="defer" onload="if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(true);}"></script>
+<![endif]-->
+
+<!--[if !IE]><!-->
+<script type="text/javascript" src="/files/advagg_js/js__79M6UrZjAw3oNGnUjsWip12JsvnUZmJGA3h9LI0kuzE__J0sbXAJNry2-C_ZL2xd0RdVuzwTLvwN-UisIv5RNCvU__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer" onload="if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(true);}"></script>
+<!--<![endif]-->
+<script type="text/javascript" src="/files/advagg_js/js__pqoYaVR8NVhof-vNXe50j2TKhFv__IihVag_h4G6kus__B4mbn4wICLQjWm1m3-z1kw8F1FtP0cDAHKp00Xy_-88__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer"></script>
+<script type="text/javascript" src="/files/advagg_js/js__H5AFmq1RrXKsrazzPq_xPQPy4K0wUKqecPjczzRiTgQ__wor4r9P8YTtQ7p6fbywTetZ47Z_orumIfrrhgxrpLus__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer" onload="
+function advagg_mod_1() {
+  // Count how many times this function is called.
+  advagg_mod_1.count = ++advagg_mod_1.count || 1;
+  try {
+    if (advagg_mod_1.count <= 40) {
+      init_drupal_core_settings();
+
+      // Set this to 100 so that this function only runs once.
+      advagg_mod_1.count = 100;
+    }
+  }
+  catch(e) {
+    if (advagg_mod_1.count >= 40) {
+      // Throw the exception if this still fails after running 40 times.
+      throw e;
+    }
+    else {
+      // Try again in 1 ms.
+      window.setTimeout(advagg_mod_1, 1);
+    }
+  }
+}
+function advagg_mod_1_check() {
+  if (window.init_drupal_core_settings && window.jQuery && window.Drupal) {
+    advagg_mod_1();
+  }
+  else {
+    window.setTimeout(advagg_mod_1_check, 1);
+  }
+}
+advagg_mod_1_check();"></script>
+<script type="text/javascript" src="/files/advagg_js/js__Oc0wwB7MVRfxtYw6EQM7d9sXj9PAQePoWSzQJ0uTk6c__iXqOGoaPhZHCPEspUr5BC8BwOx5P8B11xv7VOhoUii8__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer"></script>
+<script type="text/javascript" src="/files/advagg_js/js__FabcJ6qluktliDejymsuV-FqaN_HyMKGe93c2rO9Ky0__el1ZLGkKneOoCS6OWa01WHuIEsTsXZ46MRLCF390Fbw__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer"></script>
+<script type="text/javascript" src="/files/advagg_js/js__xNXZEl6CREO_N4cX50nXAG3o3PPW1f2SzBBHY8rEKV8__kEr2ft18NyUxNoN5MteYM9DX6pFx1tAb2oKF3RFJQBM__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer"></script>
+<script type="text/javascript" src="/files/advagg_js/js__GzpZCQ7BryjbIlF9RVmjHIrAmt9RKE_fNR7adiGsi5w__PcMNECygXSBj78w__hjxrr90zdypyZhWlWuc0buP7io__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer"></script>
+<script type="text/javascript" src="/files/advagg_js/js__j3PutbZld3YcwVNdish7PCY6mEQ1Jhd55jXi-jFIFVM__adlFHdpI9GSkFm0i35Q_u89uJIK4HcXK9OOvKRREP8A__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer"></script>
+<script type="text/javascript" src="/files/advagg_js/js__HZ7udcaZuzYLRB7H2Kyfn7yRN7NJNVw2GpKkiKp-BjA__DvOwCoJx0iaBnB2-Nz3JkxkhCqstaWHa9tJMaDT-HVY__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer"></script>
+<script type="text/javascript" src="/files/advagg_js/js__noNy8NHo7ROx_M-MhKEDGtU6-WXv5OQXFvNcWNxJ8u4__HMS-Vq2AzhXQo-nK7zz37ta59j08u3IYO4jlTu_gmSI__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer"></script>
+<script type="text/javascript" src="/files/advagg_js/js__pLKQd4r7OrHglE7Qkqw53K2UXCqQdhqQ9v0cz7hMCQY__OErfYuQdGbFHcCoLoUW_ESSvaumApNojzjJit8-2xcw__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer"></script>
+<script type="text/javascript" src="/files/advagg_js/js__hHUWFbMAa11eJtx5V0ym9o0YBsB1udk34qUT5wr1ihI__ntICfIdx3SsBpfvYB8AF0VuFk7gZjQgBaS1C9CyMj6o__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+function init_drupal_core_settings() {jQuery.extend(Drupal.settings,{"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"bluecheese","theme_token":"8l_WS3wYswFeFGZJu1oz95m5dHfnSt-t5RYaZe0nY88"},"drupalorgGitlab":{"gitlab_base_url":"https:\/\/git.drupalcode.org","base_url":"https:\/\/www.drupal.org"},"urlIsAjaxTrusted":{"\/sandbox\/dnacreative\/2682617":true,"\/project\/issues\/2682617":true},"drupalOrg":{"copyIcon":"\u003Cimg src=\u0022https:\/\/www.drupal.org\/sites\/all\/modules\/drupalorg\/drupalorg\/images\/copy-black.svg\u0022 width=\u002220\u0022 height=\u002220\u0022 alt=\u0022Copy to clipboard\u0022 title=\u0022Copy to clipboard\u0022 \/\u003E"},"d3":{"inventory":{"view-d3-vis-42ae520dc889474711275e582f2542d5":{"id":"view-d3-vis-42ae520dc889474711275e582f2542d5","type":"sparkline","rows":[["2021-05-23T00:00:00+00:00","0"],["2021-05-30T00:00:00+00:00","0"],["2021-06-06T00:00:00+00:00","0"],["2021-06-13T00:00:00+00:00","0"],["2021-06-20T00:00:00+00:00","0"],["2021-06-27T00:00:00+00:00","0"],["2021-07-04T00:00:00+00:00","0"],["2021-07-11T00:00:00+00:00","0"],["2021-07-18T00:00:00+00:00","0"],["2021-07-25T00:00:00+00:00","0"],["2021-08-01T00:00:00+00:00","0"],["2021-08-08T00:00:00+00:00","0"],["2021-08-15T00:00:00+00:00","0"],["2021-08-22T00:00:00+00:00","0"],["2021-08-29T00:00:00+00:00","0"],["2021-09-05T00:00:00+00:00","0"],["2021-09-12T00:00:00+00:00","0"],["2021-09-19T00:00:00+00:00","0"],["2021-09-26T00:00:00+00:00","0"],["2021-10-03T00:00:00+00:00","0"],["2021-10-10T00:00:00+00:00","0"],["2021-10-17T00:00:00+00:00","0"],["2021-10-24T00:00:00+00:00","0"],["2021-10-31T00:00:00+00:00","0"],["2021-11-07T00:00:00+00:00","0"],["2021-11-14T00:00:00+00:00","0"],["2021-11-21T00:00:00+00:00","0"],["2021-11-28T00:00:00+00:00","0"],["2021-12-05T00:00:00+00:00","0"],["2021-12-12T00:00:00+00:00","0"],["2021-12-19T00:00:00+00:00","0"],["2021-12-26T00:00:00+00:00","0"],["2022-01-02T00:00:00+00:00","0"],["2022-01-09T00:00:00+00:00","0"],["2022-01-16T00:00:00+00:00","0"],["2022-01-23T00:00:00+00:00","0"],["2022-01-30T00:00:00+00:00","0"],["2022-02-06T00:00:00+00:00","0"],["2022-02-13T00:00:00+00:00","0"],["2022-02-20T00:00:00+00:00","0"],["2022-02-27T00:00:00+00:00","0"],["2022-03-06T00:00:00+00:00","0"],["2022-03-13T00:00:00+00:00","0"],["2022-03-20T00:00:00+00:00","0"],["2022-03-27T00:00:00+00:00","0"],["2022-04-03T00:00:00+00:00","0"],["2022-04-10T00:00:00+00:00","0"],["2022-04-17T00:00:00+00:00","0"],["2022-04-24T00:00:00+00:00","0"],["2022-05-01T00:00:00+00:00","0"],["2022-05-08T00:00:00+00:00","0"],["2022-05-15T00:00:00+00:00","0"],["2022-05-22T00:00:00+00:00","0"],["2022-05-29T00:00:00+00:00","0"],["2022-06-05T00:00:00+00:00","0"],["2022-06-12T00:00:00+00:00","0"],["2022-06-19T00:00:00+00:00","0"],["2022-06-26T00:00:00+00:00","0"],["2022-07-03T00:00:00+00:00","0"],["2022-07-10T00:00:00+00:00","0"],["2022-07-17T00:00:00+00:00","0"],["2022-07-24T00:00:00+00:00","0"],["2022-07-31T00:00:00+00:00","0"],["2022-08-07T00:00:00+00:00","0"],["2022-08-14T00:00:00+00:00","0"],["2022-08-21T00:00:00+00:00","0"],["2022-08-28T00:00:00+00:00","0"],["2022-09-04T00:00:00+00:00","0"],["2022-09-11T00:00:00+00:00","0"],["2022-09-18T00:00:00+00:00","0"],["2022-09-25T00:00:00+00:00","0"],["2022-10-02T00:00:00+00:00","0"],["2022-10-09T00:00:00+00:00","0"],["2022-10-16T00:00:00+00:00","0"],["2022-10-23T00:00:00+00:00","0"],["2022-10-30T00:00:00+00:00","0"],["2022-11-06T00:00:00+00:00","0"],["2022-11-13T00:00:00+00:00","0"],["2022-11-20T00:00:00+00:00","0"],["2022-11-27T00:00:00+00:00","0"],["2022-12-04T00:00:00+00:00","0"],["2022-12-11T00:00:00+00:00","0"],["2022-12-18T00:00:00+00:00","0"],["2022-12-25T00:00:00+00:00","0"],["2023-01-01T00:00:00+00:00","0"],["2023-01-08T00:00:00+00:00","0"],["2023-01-15T00:00:00+00:00","0"],["2023-01-22T00:00:00+00:00","0"],["2023-01-29T00:00:00+00:00","0"],["2023-02-05T00:00:00+00:00","0"],["2023-02-12T00:00:00+00:00","0"],["2023-02-19T00:00:00+00:00","0"],["2023-02-26T00:00:00+00:00","0"],["2023-03-05T00:00:00+00:00","0"],["2023-03-12T00:00:00+00:00","0"],["2023-03-19T00:00:00+00:00","0"],["2023-03-26T00:00:00+00:00","0"],["2023-04-02T00:00:00+00:00","0"],["2023-04-09T00:00:00+00:00","0"],["2023-04-16T00:00:00+00:00","0"],["2023-04-23T00:00:00+00:00","0"],["2023-04-30T00:00:00+00:00","0"],["2023-05-07T00:00:00+00:00","0"],["2023-05-14T00:00:00+00:00","0"],["2023-05-21T00:00:00+00:00","0"]],"width":"100","height":"20"},"view-d3-vis-7707cb1e04d309408ab9ba9def8917d5":{"id":"view-d3-vis-7707cb1e04d309408ab9ba9def8917d5","type":"sparkline","rows":[["2021-05-23T00:00:00+00:00","0"],["2021-05-30T00:00:00+00:00","0"],["2021-06-06T00:00:00+00:00","0"],["2021-06-13T00:00:00+00:00","0"],["2021-06-20T00:00:00+00:00","0"],["2021-06-27T00:00:00+00:00","0"],["2021-07-04T00:00:00+00:00","0"],["2021-07-11T00:00:00+00:00","0"],["2021-07-18T00:00:00+00:00","0"],["2021-07-25T00:00:00+00:00","0"],["2021-08-01T00:00:00+00:00","0"],["2021-08-08T00:00:00+00:00","0"],["2021-08-15T00:00:00+00:00","0"],["2021-08-22T00:00:00+00:00","0"],["2021-08-29T00:00:00+00:00","0"],["2021-09-05T00:00:00+00:00","0"],["2021-09-12T00:00:00+00:00","0"],["2021-09-19T00:00:00+00:00","0"],["2021-09-26T00:00:00+00:00","0"],["2021-10-03T00:00:00+00:00","0"],["2021-10-10T00:00:00+00:00","0"],["2021-10-17T00:00:00+00:00","0"],["2021-10-24T00:00:00+00:00","0"],["2021-10-31T00:00:00+00:00","0"],["2021-11-07T00:00:00+00:00","0"],["2021-11-14T00:00:00+00:00","0"],["2021-11-21T00:00:00+00:00","0"],["2021-11-28T00:00:00+00:00","0"],["2021-12-05T00:00:00+00:00","0"],["2021-12-12T00:00:00+00:00","0"],["2021-12-19T00:00:00+00:00","0"],["2021-12-26T00:00:00+00:00","0"],["2022-01-02T00:00:00+00:00","0"],["2022-01-09T00:00:00+00:00","0"],["2022-01-16T00:00:00+00:00","0"],["2022-01-23T00:00:00+00:00","0"],["2022-01-30T00:00:00+00:00","0"],["2022-02-06T00:00:00+00:00","0"],["2022-02-13T00:00:00+00:00","0"],["2022-02-20T00:00:00+00:00","0"],["2022-02-27T00:00:00+00:00","0"],["2022-03-06T00:00:00+00:00","0"],["2022-03-13T00:00:00+00:00","0"],["2022-03-20T00:00:00+00:00","0"],["2022-03-27T00:00:00+00:00","0"],["2022-04-03T00:00:00+00:00","0"],["2022-04-10T00:00:00+00:00","0"],["2022-04-17T00:00:00+00:00","0"],["2022-04-24T00:00:00+00:00","0"],["2022-05-01T00:00:00+00:00","0"],["2022-05-08T00:00:00+00:00","0"],["2022-05-15T00:00:00+00:00","0"],["2022-05-22T00:00:00+00:00","0"],["2022-05-29T00:00:00+00:00","0"],["2022-06-05T00:00:00+00:00","0"],["2022-06-12T00:00:00+00:00","0"],["2022-06-19T00:00:00+00:00","0"],["2022-06-26T00:00:00+00:00","0"],["2022-07-03T00:00:00+00:00","0"],["2022-07-10T00:00:00+00:00","0"],["2022-07-17T00:00:00+00:00","0"],["2022-07-24T00:00:00+00:00","0"],["2022-07-31T00:00:00+00:00","0"],["2022-08-07T00:00:00+00:00","0"],["2022-08-14T00:00:00+00:00","0"],["2022-08-21T00:00:00+00:00","0"],["2022-08-28T00:00:00+00:00","0"],["2022-09-04T00:00:00+00:00","0"],["2022-09-11T00:00:00+00:00","0"],["2022-09-18T00:00:00+00:00","0"],["2022-09-25T00:00:00+00:00","0"],["2022-10-02T00:00:00+00:00","0"],["2022-10-09T00:00:00+00:00","0"],["2022-10-16T00:00:00+00:00","0"],["2022-10-23T00:00:00+00:00","0"],["2022-10-30T00:00:00+00:00","0"],["2022-11-06T00:00:00+00:00","0"],["2022-11-13T00:00:00+00:00","0"],["2022-11-20T00:00:00+00:00","0"],["2022-11-27T00:00:00+00:00","0"],["2022-12-04T00:00:00+00:00","0"],["2022-12-11T00:00:00+00:00","0"],["2022-12-18T00:00:00+00:00","0"],["2022-12-25T00:00:00+00:00","0"],["2023-01-01T00:00:00+00:00","0"],["2023-01-08T00:00:00+00:00","0"],["2023-01-15T00:00:00+00:00","0"],["2023-01-22T00:00:00+00:00","0"],["2023-01-29T00:00:00+00:00","0"],["2023-02-05T00:00:00+00:00","0"],["2023-02-12T00:00:00+00:00","0"],["2023-02-19T00:00:00+00:00","0"],["2023-02-26T00:00:00+00:00","0"],["2023-03-05T00:00:00+00:00","0"],["2023-03-12T00:00:00+00:00","0"],["2023-03-19T00:00:00+00:00","0"],["2023-03-26T00:00:00+00:00","0"],["2023-04-02T00:00:00+00:00","0"],["2023-04-09T00:00:00+00:00","0"],["2023-04-16T00:00:00+00:00","0"],["2023-04-23T00:00:00+00:00","0"],["2023-04-30T00:00:00+00:00","0"],["2023-05-07T00:00:00+00:00","0"],["2023-05-14T00:00:00+00:00","0"],["2023-05-21T00:00:00+00:00","0"]],"width":"100","height":"20"},"view-d3-vis-2b400362f2906386cc50a84bc351e81b":{"id":"view-d3-vis-2b400362f2906386cc50a84bc351e81b","type":"sparkline","rows":[["2021-05-23T00:00:00+00:00","0"],["2021-05-30T00:00:00+00:00","0"],["2021-06-06T00:00:00+00:00","0"],["2021-06-13T00:00:00+00:00","0"],["2021-06-20T00:00:00+00:00","0"],["2021-06-27T00:00:00+00:00","0"],["2021-07-04T00:00:00+00:00","0"],["2021-07-11T00:00:00+00:00","0"],["2021-07-18T00:00:00+00:00","0"],["2021-07-25T00:00:00+00:00","0"],["2021-08-01T00:00:00+00:00","0"],["2021-08-08T00:00:00+00:00","0"],["2021-08-15T00:00:00+00:00","0"],["2021-08-22T00:00:00+00:00","0"],["2021-08-29T00:00:00+00:00","0"],["2021-09-05T00:00:00+00:00","0"],["2021-09-12T00:00:00+00:00","0"],["2021-09-19T00:00:00+00:00","0"],["2021-09-26T00:00:00+00:00","0"],["2021-10-03T00:00:00+00:00","0"],["2021-10-10T00:00:00+00:00","0"],["2021-10-17T00:00:00+00:00","0"],["2021-10-24T00:00:00+00:00","0"],["2021-10-31T00:00:00+00:00","0"],["2021-11-07T00:00:00+00:00","0"],["2021-11-14T00:00:00+00:00","0"],["2021-11-21T00:00:00+00:00","0"],["2021-11-28T00:00:00+00:00","0"],["2021-12-05T00:00:00+00:00","0"],["2021-12-12T00:00:00+00:00","0"],["2021-12-19T00:00:00+00:00","0"],["2021-12-26T00:00:00+00:00","0"],["2022-01-02T00:00:00+00:00","0"],["2022-01-09T00:00:00+00:00","0"],["2022-01-16T00:00:00+00:00","0"],["2022-01-23T00:00:00+00:00","0"],["2022-01-30T00:00:00+00:00","0"],["2022-02-06T00:00:00+00:00","0"],["2022-02-13T00:00:00+00:00","0"],["2022-02-20T00:00:00+00:00","0"],["2022-02-27T00:00:00+00:00","0"],["2022-03-06T00:00:00+00:00","0"],["2022-03-13T00:00:00+00:00","0"],["2022-03-20T00:00:00+00:00","0"],["2022-03-27T00:00:00+00:00","0"],["2022-04-03T00:00:00+00:00","0"],["2022-04-10T00:00:00+00:00","0"],["2022-04-17T00:00:00+00:00","0"],["2022-04-24T00:00:00+00:00","0"],["2022-05-01T00:00:00+00:00","0"],["2022-05-08T00:00:00+00:00","0"],["2022-05-15T00:00:00+00:00","0"],["2022-05-22T00:00:00+00:00","0"],["2022-05-29T00:00:00+00:00","0"],["2022-06-05T00:00:00+00:00","0"],["2022-06-12T00:00:00+00:00","0"],["2022-06-19T00:00:00+00:00","0"],["2022-06-26T00:00:00+00:00","0"],["2022-07-03T00:00:00+00:00","0"],["2022-07-10T00:00:00+00:00","0"],["2022-07-17T00:00:00+00:00","0"],["2022-07-24T00:00:00+00:00","0"],["2022-07-31T00:00:00+00:00","0"],["2022-08-07T00:00:00+00:00","0"],["2022-08-14T00:00:00+00:00","0"],["2022-08-21T00:00:00+00:00","0"],["2022-08-28T00:00:00+00:00","0"],["2022-09-04T00:00:00+00:00","0"],["2022-09-11T00:00:00+00:00","0"],["2022-09-18T00:00:00+00:00","0"],["2022-09-25T00:00:00+00:00","0"],["2022-10-02T00:00:00+00:00","0"],["2022-10-09T00:00:00+00:00","0"],["2022-10-16T00:00:00+00:00","0"],["2022-10-23T00:00:00+00:00","0"],["2022-10-30T00:00:00+00:00","0"],["2022-11-06T00:00:00+00:00","0"],["2022-11-13T00:00:00+00:00","0"],["2022-11-20T00:00:00+00:00","0"],["2022-11-27T00:00:00+00:00","0"],["2022-12-04T00:00:00+00:00","0"],["2022-12-11T00:00:00+00:00","0"],["2022-12-18T00:00:00+00:00","0"],["2022-12-25T00:00:00+00:00","0"],["2023-01-01T00:00:00+00:00","0"],["2023-01-08T00:00:00+00:00","0"],["2023-01-15T00:00:00+00:00","0"],["2023-01-22T00:00:00+00:00","0"],["2023-01-29T00:00:00+00:00","0"],["2023-02-05T00:00:00+00:00","0"],["2023-02-12T00:00:00+00:00","0"],["2023-02-19T00:00:00+00:00","0"],["2023-02-26T00:00:00+00:00","0"],["2023-03-05T00:00:00+00:00","0"],["2023-03-12T00:00:00+00:00","0"],["2023-03-19T00:00:00+00:00","0"],["2023-03-26T00:00:00+00:00","0"],["2023-04-02T00:00:00+00:00","0"],["2023-04-09T00:00:00+00:00","0"],["2023-04-16T00:00:00+00:00","0"],["2023-04-23T00:00:00+00:00","0"],["2023-04-30T00:00:00+00:00","0"],["2023-05-07T00:00:00+00:00","0"],["2023-05-14T00:00:00+00:00","0"],["2023-05-21T00:00:00+00:00","0"]],"width":"100","height":"20"}}},"better_exposed_filters":{"views":{"project_issue_metrics_new_issues":{"displays":{"default":{"filters":[]}}},"project_issue_metrics_open_bugs":{"displays":{"default":{"filters":[]}}},"project_issue_metrics_participants":{"displays":{"default":{"filters":[]}}}}},"drupalorgCrosssiteConsentNeeded":true}); 
+if(jQuery.isFunction(jQuery.holdReady)){jQuery.holdReady(false);}} if(window.jQuery && window.Drupal){init_drupal_core_settings();}
+//--><!]]>
+</script>
+<script type="text/javascript" src="/files/advagg_js/js__2k0CJ3KAQNFTFab3y6ZvNtxs3HLons0Brq7VwvPSkKo__ggPxG2fdB-NHGEYK4vydE8LjlDpbAhFA8h8dSa3sHZg__YaNGWokqa69Wq8hHbkE322PVJ8I-GmpfBsT8LGsMpcI.js" defer="defer"></script>
+</body>
+</html>
